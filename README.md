@@ -1,6 +1,8 @@
-Generic Ajax HolePunch module for Magento 
-	- Line_HolePunch
+Line_HolePunch
 ================================
+Generic Ajax HolePunch module for Magento
+-----------------------------------------
+
 
 Module Overview
 -------------------------
@@ -10,11 +12,11 @@ The Line_HolePunch module provides a generic way to handle holepunching dynamic 
 The module aims to be as flexible as possible.  
 
 Currently:
-	- Blocks can be marked as requiring a full layout load (ensuring that any required registry objects and layout handles are applied to the layout before being loaded - though please be as conservative as possible with this as it will slow the ajax call down)
-	- Any block can be marked as dynamic via config.xml
-	- Routes can be blocked
-	- Styling hooks added to placeholder templates
-	- Custom placholder templates can be used on a per block basis
+    - Blocks can be marked as requiring a full layout load (ensuring that any required registry objects and layout handles are applied to the layout before being loaded - though please be as conservative as possible with this as it will slow the ajax call down)
+    - Any block can be marked as dynamic via config.xml
+    - Routes can be blocked
+    - Styling hooks added to placeholder templates
+    - Custom placholder templates can be used on a per block basis
 	
 Usage
 -------------------------
@@ -24,13 +26,15 @@ Configuration options are set in config.xml under the <holepunch> node.  Current
 1. Blocks
 	Any blocks that are to be dynamic must be declared in this section using the block name as it is defined in layout.xml i.e.
 	
-	<top_links>
-		<name>top.links</name>
+	```<top_links>
+           <name>top.links</name>
 	</top_links>
-				
+	```	
+	
 2. Registry
 	Specify any objects which the module should look out for in the registry.  Sometimes these objects will be important for dynamic blocks. Use the following format:
 	
+	```
 	 <registry>
 		<maps>
 			<product>
@@ -43,11 +47,12 @@ Configuration options are set in config.xml under the <holepunch> node.  Current
 			</category>
 		</maps>
 	</registry>
-
+	```
 
 3. Paths
 	Here you can let the module know about any routes which should be excluded.  For example, the customer account pages are exluded with the following xml:
 	
+	```
 	 <paths>
 		<excluded>
 			<customer_account>
@@ -55,7 +60,7 @@ Configuration options are set in config.xml under the <holepunch> node.  Current
 			</customer_account>
 		</excluded>
 	</paths>
-	
+	```
 	
 
 Feedback
