@@ -14,15 +14,11 @@ The Line_HolePunch module provides a generic way to handle holepunching dynamic 
 The module aims to be as flexible as possible.  
 
 Currently:
-	- Blocks can be marked as requiring a full layout load (ensuring that any required registry objects and layout handles are applied to the layout before being loaded - though please be as conservative as possible with this as it will slow the ajax call down)
-	
-	- Any block can be marked as dynamic via config.xml
-	
-    - Routes can be blocked
-	
-    - Styling hooks added to placeholder templates
-	
-    - Custom placholder templates can be used on a per block basis
+
+- Blocks can be marked as requiring a full layout load (ensuring that any required registry objects and layout handles are applied to the layout before being loaded - though please be as conservative as possible with this as it will slow the ajax call down)
+- Any block can be marked as dynamic via config.xml
+- Routes can be blocked
+- Custom placholder templates can be used on a per block basis
 	
 Usage
 -------------------------
