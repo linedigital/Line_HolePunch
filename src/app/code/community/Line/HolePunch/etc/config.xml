@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<!--
+    /**
+    * @category   Line
+    * @package    Line_HolePunch
+    * @author     Line <drew@line.uk.com>
+    * @copyright  Copyright (c) 2012 Line Digital Limited (http://www.line.uk.com)
+    * @license    http://opensource.org/licenses/OSL-3.0  Open Software License (OSL 3.0)
+    */
+-->
+<config>
+    <modules>
+        <Line_HolePunch>
+            <version>0.1.0</version>
+        </Line_HolePunch>
+    </modules>
+    <global>
+        <helpers>
+            <holepunch>
+                <class>Line_HolePunch_Helper</class>
+            </holepunch>
+        </helpers>
+        <blocks>
+            <holepunch>
+                <class>Line_HolePunch_Block</class>
+            </holepunch>
+            <core>
+                <rewrite>
+                    <messages>Line_HolePunch_Block_Rewrite_Messages</messages>
+                </rewrite>
+            </core>
+        </blocks>
+        <models>
+            <holepunch>
+                <class>Line_HolePunch_Model</class>
+            </holepunch>
+        </models>
+        
+        <!-- 
+            Configuration settings for holepunch functionality
+        -->
+        <holepunch>
+            <!--
+                Blocks defined here will be treated as dynamic.  
+                
+                Valid nodes currently are 'name' and 'placeholder'.
+                
+                The placeholder node allows for a custom placeholder template
+                to be used instead of the blank default one.
+                i.e. <placeholder>holepunch/placeholders/toplinks.phtml</placeholder>
+                
+                If a block requries additional handles or registry objects in order
+                for it to load within the layout correctly, then plase add a node to
+                the block <requires_full_layout />.  this will trigger the full
+                layout, including all handles and registry objects to be loaded.
+            -->
+            <blocks>
+                <top_links>
+                    <name>top.links</name>
+                </top_links>
+                <cart_sidebar>
+                    <name>cart_sidebar</name>
+                </cart_sidebar>
+                <right_reports>
+                    <name>right.reports.product.viewed</name>
+                </right_reports>
+                <left_reports>
+                    <name>left.reports.product.viewed</name>
+                </left_reports>
+            </blocks>
+            
+            <!--
+                Let the module know about any objects to look out for in the
+                registry which will be required for a full layout to load
+                correctly
+            -->
+            <registry>
+                <maps>
+                    <product>
+                        <registry_key>product</registry_key>
+                        <class_alias>catalog/product</class_alias>
+                    </product>
+                    <category>
+                        <registry_key>current_category</registry_key>
+                        <class_alias>catalog/category</class_alias>
+                    </category>
+                </maps>
+            </registry>
+            
+            <!--
+                Set up any paths that should be exludeded from the holepunch
+            -->
+            <paths>
+                <excluded>
+                    <checkout_onepage>
+                        <path>checkout/onepage</path>
+                    </checkout_onepage>
+                    <customer_account>
+                        <path>customer/account</path>
+                    </customer_account>
+                </excluded>
+            </paths>
+        </holepunch>
+    </global>
+    <frontend>
+        <routers>
+            <holepunch>
+                <use>standard</use>
+                <args>
+                    <module>Line_HolePunch</module>
+                    <frontName>holepunch</frontName>
+                </args>
+            </holepunch>
+        </routers>
+        <events>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <holepunch_layout_load_before>
+                        <class>Line_HolePunch_Model_Observer</class>
+                        <method>generateBlocksAfter</method>
+                    </holepunch_layout_load_before>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+        </events>
+        <layout>
+            <updates>
+                <holepunch>
+                    <file>holepunch.xml</file>
+                </holepunch>
+            </updates>
+        </layout>
+    </frontend>
+</config>

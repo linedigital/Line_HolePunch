@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!--
+    /**
+    * @category   Line
+    * @package    Line_HolePunch
+    * @author     Line <drew@line.uk.com>
+    * @copyright  Copyright (c) 2012 Line Digital Limited (http://www.line.uk.com)
+    * @license    http://opensource.org/licenses/OSL-3.0  Open Software License (OSL 3.0)
+    */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <block type="holepunch/js" name="holepunch.js" template="holepunch/js.phtml" as="holepunch.js" />
+            <action method="addItem" ifconfig="dev/holepunch/use_jquery"><type>js</type><file>lib/jquery/jquery-1.7.2.min.js</file></action>
+        </reference>
+    </default>
+</layout>

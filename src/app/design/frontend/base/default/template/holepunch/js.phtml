@@ -1,0 +1,21 @@
+<?php if ($this->shouldOutput()) : ?>
+<script>
+    !function( $ ){
+        $.get(
+            "<?php echo $this->getActionUrl() ?>",
+            {<?php echo $this->getJsonParams() ?>},
+            function(data) {
+                $(function (){
+                    $.each(data.blocks, function(key, value) {
+                        $(prepId(key)).replaceWith(value);
+                    });
+                })
+            },
+            'json'
+        );
+        function prepId(id) {
+            return '#' + id.replace(/(:|\.)/g,'\\$1');
+        }
+    }( window.jQuery );
+</script>
+<?php endif; ?>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!--
+    /**
+    * @category   Line
+    * @package    Line_HolePunch
+    * @author     Line <drew@line.uk.com>
+    * @copyright  Copyright (c) 2012 Line Digital Limited (http://www.line.uk.com)
+    * @license    http://opensource.org/licenses/OSL-3.0  Open Software License (OSL 3.0)
+    */
+-->
+<config> 
+    <sections>
+        <dev>
+            <groups>
+                <holepunch translate="label">
+                    <label>Hole Punch Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store> 
+                    <fields>
+                        <active>
+                            <label>Active</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </active>
+                        <use_jquery>
+                            <label>Include jQuery</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store> 
+                            <comment>Select yes here to load jquery or no if jquery is already being loaded by another module or by your theme</comment>
+                        </use_jquery>
+                    </fields>      
+                </holepunch>
+            </groups>
+        </dev>
+    </sections>
+</config>

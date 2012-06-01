@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+    /**
+    * @category   Line
+    * @package    Line_HolePunch
+    * @author     Line <drew@line.uk.com>
+    * @copyright  Copyright (c) 2012 Line Digital Limited (http://www.line.uk.com)
+    * @license    http://opensource.org/licenses/OSL-3.0  Open Software License (OSL 3.0)
+    */
+-->
+<config>
+    <modules>
+        <Line_HolePunch>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Line_HolePunch>
+    </modules>
+</config>
