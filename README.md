@@ -1,7 +1,9 @@
 Line_HolePunch
 ================================
+
 Generic Ajax HolePunch module for Magento
 -----------------------------------------
+
 
 
 Module Overview
@@ -12,10 +14,14 @@ The Line_HolePunch module provides a generic way to handle holepunching dynamic 
 The module aims to be as flexible as possible.  
 
 Currently:
-    - Blocks can be marked as requiring a full layout load (ensuring that any required registry objects and layout handles are applied to the layout before being loaded - though please be as conservative as possible with this as it will slow the ajax call down)
-    - Any block can be marked as dynamic via config.xml
+	- Blocks can be marked as requiring a full layout load (ensuring that any required registry objects and layout handles are applied to the layout before being loaded - though please be as conservative as possible with this as it will slow the ajax call down)
+	
+	- Any block can be marked as dynamic via config.xml
+	
     - Routes can be blocked
+	
     - Styling hooks added to placeholder templates
+	
     - Custom placholder templates can be used on a per block basis
 	
 Usage
@@ -25,8 +31,8 @@ Configuration options are set in config.xml under the <holepunch> node.  Current
 
 1. Blocks
 	Any blocks that are to be dynamic must be declared in this section using the block name as it is defined in layout.xml i.e.
-	
-	```<top_links>
+	```
+	<top_links>
            <name>top.links</name>
 	</top_links>
 	```	
